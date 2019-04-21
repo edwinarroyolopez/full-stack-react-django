@@ -1,0 +1,99 @@
+Tutorial:
+https://docs.docker.com/compose/django/
+---- docker django
+A. Install docker-compose
+  1. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  2. sudo chmod +x /usr/local/bin/docker-compose
+  3. sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  4. docker-compose --version
+B. Prepare docker-django
+  1. Dockerfile
+  2. Requirements.txt
+  3. docker-compose.yml
+C. create a Django project
+  1. sudo docker-compose run web django-admin startproject composeexample .
+  2. sudo chown -R $USER:$USER .
+  3. config string connection db in settings.py
+  4. Run command: docker-compose up
+
+
+--Postgress
+http://www.marinamele.com/taskbuster-django-tutorial/install-and-configure-posgresql-for-django
+https://manjaro.site/how-to-install-postgresql-server-on-linux-mint-19/
+
+
+
+https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/
+
+Install
+-----
+I. curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+II. python3.7 get-pip.py
+III. sudo pip install Django
+****
+sudo wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz
+28  sudo tar xzf Python-3.7.2.tgz
+29  cd Python-3.7.2/
+30  sudo ./configure --enable-optimizations
+31  python3.7 -V
+32  sudo make altinstall
+33  python3.7 -V
+
+ sudo apt-get install python3.6-psycopg2 => funciona
+
+sudo apt-get install python3.6-dev libmysqlclient-dev
+sudo apt-get install python3-setuptools
+sudo apt-get install python3-dev
+
+
+for settings mysql
+pip install mysqlclient
+sudo apt-get install python3-setuptools
+sudo apt-get install libmysqlclient-dev
+- pip2.7 install --upgrade --user travis pip setuptools wheel virtualenv
+
+
+***
+
+
+sudo apt install python3-pip
+pip3 install Django
+python3.6 -m django --version  => result 2.2
+
+****
+
+Tutorial
+-----
+https://www.youtube.com/watch?v=9MBsaWe0SN4&t=107s
+
+New project
+-----
+1. django-admin startproject testProject   => this create a project in the
+2. Open with pycharm
+3. verify that project interpreter is ready
+
+# Coding
+1. Setting db in settings.py
+2. Create an application in this project
+    in dir "apps" django-admin startapp  academicManagement
+3. Build models
+4. in file settings.py we do register app "academicManagement" in array INSTALLED_APPS
+5. after we go to directory where is manage.py and excute "python3.6 manage.py migrate"
+6. internal migrate "python3.6 manage.py makemigrations"
+7. again execute "python3.6 manage.py migrate"
+8. We doing create a root user "python3.6 manage.py createsuperuser" => username: zeroed ? email: zeroedprogrammer@gmail.com ? pass: abcd.1234
+9. run server "python3.6 manage.py runserver"
+10. we go to "http://127.0.0.1:8000/"
+11. stop server we go to "admin.py"
+    from University.apps.academicManagement.models import *
+    admin.site.register(Student)
+    admin.site.register(Course)
+    admin.site.register(Enrollment)
+12. run server again "http://127.0.0.1:8000/admin"
+
+
+
+
+
+
+----------
